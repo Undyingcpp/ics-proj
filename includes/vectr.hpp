@@ -15,9 +15,21 @@ void print(vectr A){
 	cout << A.x << " " << A.y << "\n";
 }
 
+vectr operator += (vectr A){
+	this->x = this->x + A.x;
+	this->y = this->y + A.y;
+	return *this;
+}
+
 vectr operator + (vectr A, vectr B){
 	vectr C(A.x + B.x, A.y + B.y);
 	return C;
+}
+
+vectr operator -= (vectr A){
+	this->x = this->x - A.x;
+	this->y = this->y - A.y;
+	return *this;
 }
 
 vectr operator - (vectr A, vectr B){
@@ -33,7 +45,18 @@ long double operator % (vectr A, vectr B){
 	return A.x*B.y - A.y*B.x;
 }
 
+vectr operator *= (long double k){
+	this->x = this->x * k;
+	this->y = this->y * k;
+	return *this;
+}
+
 vectr operator * (long double k, vectr A){
+	vectr B(A.x*k, A.y*k);
+	return B;
+}
+
+vectr operator * (vectr A, long double k){
 	vectr B(A.x*k, A.y*k);
 	return B;
 }
