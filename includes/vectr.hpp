@@ -33,8 +33,8 @@ long double operator % (vectr A, vectr B){
 	return A.x*B.y - A.y*B.x;
 }
 
-vectr operator * (vectr A, long double k){
-	vectr B(A.x*k, A.x*k);
+vectr operator * (long double k, vectr A){
+	vectr B(A.x*k, A.y*k);
 	return B;
 }
 
